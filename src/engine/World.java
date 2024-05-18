@@ -2,10 +2,12 @@ package engine;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
+import engine.utils.BlockType;
 import engine.utils.Constants;
 import engine.utils.IRenderable;
 import engine.utils.Utils;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -23,8 +25,8 @@ public class World implements IRenderable {
         int centerX = screenWidth / 2;
         int centerY = screenHeight / 2;
         // Create a player object positioned at the center of the screen
-        CurrentBlock = new Block(Block.BLOCKS[1].type, Block.BLOCKS[1].color, centerX, centerY);
-        System.out.println(Constants.blockTypes[5][0]);
+        CurrentBlock = new Block(BlockType.BLOCKS[1], centerX, centerY);
+        System.out.println(Arrays.toString(Constants.blockTypes[1]));
         running = true;
     }
 
@@ -72,19 +74,13 @@ public class World implements IRenderable {
             */
             if (false) {
                 Random r = new Random();
-                CurrentBlock.type = Block.BLOCKS[r.nextInt(0, Block.BLOCKS.length)].type;
+                CurrentBlock = new Block(BlockType.BLOCKS[r.nextInt(0, BlockType.BLOCKS.length)],0,0);
             }
             //Use a switch statement to handle different key types
             if (keyPress != null) {
                 switch (keyPress.getKeyType()) {
-                    case ArrowUp:
-                        // Move the player up
-                        Random r = new Random();
-                        CurrentBlock = Block.BLOCKS[1];
-                    case ArrowDown:
-                        // Move the player down
-                        CurrentBlock.move(0, 1);
-                        break;
+
+
                     case ArrowLeft:
                         // Move the player left
                         CurrentBlock.move(-1, 0);
