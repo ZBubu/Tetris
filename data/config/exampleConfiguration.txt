@@ -1,0 +1,4 @@
+#Configuration file
+#Fri May 17 20:58:56 CEST 2024
+name=bubu
+surname=
