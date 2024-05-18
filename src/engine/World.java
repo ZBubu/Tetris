@@ -1,11 +1,9 @@
 package engine;
 
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
-import engine.utils.BlockType;
-import engine.utils.Constants;
-import engine.utils.IRenderable;
-import engine.utils.Utils;
+import engine.utils.*;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -15,19 +13,26 @@ import java.util.Random;
  */
 public class World implements IRenderable {
     private boolean running; // Variable to determine if the world is still running or not
-
+    private Cell[][] grid = new Cell[10][20];
     private boolean isHintTextDisplayed = true;
     public Block CurrentBlock;
+    int centerX;
 
     // Constructor
     public World(int screenWidth, int screenHeight) {
         // Find the center of the screen
-        int centerX = screenWidth / 2;
+        centerX = screenWidth / 2;
         int centerY = screenHeight / 2;
         // Create a player object positioned at the center of the screen
-        CurrentBlock = new Block(BlockType.BLOCKS[1], centerX, centerY);
-        System.out.println(Arrays.toString(Constants.blockTypes[1]));
+        CurrentBlock = new Block(BlockType.BLOCKS[1], centerX, 0);
+        //System.out.println(Arrays.toString(Constants.blockTypes[1]));
         running = true;
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[0].length;j++){
+
+                grid[i][j]= new Cell(true, TextColor.ANSI.RED);
+            }
+        }
     }
 
     /**
@@ -39,6 +44,18 @@ public class World implements IRenderable {
         Utils.hideCursor(0, 0, textGraphics);
         // Draw the player
         CurrentBlock.draw(textGraphics);
+        //Draw tetris grid
+        for(int x=-1;x<grid.length*2+1;x+=2){
+            for(int y=-1;y<grid[0].length+1;y++){
+                if(x<0 || y<0 || x>grid.length*2-3 || y==grid[0].length){
+                    textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
+                    textGraphics.putString(centerX-grid.length+x,y+1,"\u2588\u2588");
+                }
+                else{
+                    grid[x/2][y].draw(centerX-grid.length+x,y+1,textGraphics);
+                }
+            }
+        }
         // Draw the hint text if necessary
         if (isHintTextDisplayed) {
             Utils.drawText(textGraphics, "[Hint] Try to move around using the arrow keys");
@@ -105,9 +122,6 @@ public class World implements IRenderable {
         return running;
     }
 
-    public Block getCurrentBlock () {
-        return CurrentBlock;
-    }
 }
 
 

@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6608745d-6b61-4bc7-90df-7a2564a8e772" name="Changes" comment="A">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/utils/BlockType.java" afterDir="false" />
+    <list default="true" id="6608745d-6b61-4bc7-90df-7a2564a8e772" name="Changes" comment="Added BlockTypes">
+      <change afterPath="$PROJECT_DIR$/src/engine/utils/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/config/exampleConfiguration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/exampleConfiguration.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/utils/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,11 +92,20 @@
       <option name="project" value="LOCAL" />
       <updated>1716017738296</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added BlockTypes">
+      <option name="closed" value="true" />
+      <created>1716023109101</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716023109101</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="A" />
-    <option name="LAST_COMMIT_MESSAGE" value="A" />
+    <MESSAGE value="Added BlockTypes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added BlockTypes" />
   </component>
 </project>
