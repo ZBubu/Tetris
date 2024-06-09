@@ -3,6 +3,10 @@ package engine.utils;
 import com.googlecode.lanterna.TextColor;
 import engine.Block;
 
+/**
+ * La classe BlockType viene usata per definire tutti i tipi di blocchi che vengono usati nel gioco.
+ * I vari blocchi sono tutti contenuti nell'array di stringhe shape.
+ */
 public class BlockType {
     public String[] shape;
     public TextColor color;
